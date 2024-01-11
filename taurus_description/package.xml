@@ -8,7 +8,7 @@
   </description>
   <maintainer email="rvjacome@espol.edu.ec">Robinson Jacome</maintainer>
   <license>Apache 2.0</license>
-  <author email="rvjacome@espol.edu.ec">Robinson Jacome</author>
+  <author email="cepaquin@espol.edu.ec">Dr Pato</author>
   <buildtool_depend>ament_cmake</buildtool_depend>
   <depend>urdf</depend>
   <export>
