@@ -3,17 +3,17 @@ MazeSolverRobot
 
 Este proyecto se constan en la realizacion desde su conceptualizacion hasta la implementacion de un robot Resuelve laberinto para competencia
 
-### Introducción:
+###### Introducción:
 Existen varias categorias de Robot Laberinto o Maze Solver Robot ,entre estas estan:
-### *Micro-Mouse Mini:
+###### **Micro-Mouse Mini:
 Puede tener restricciones más estrictas en cuanto a tamaño y peso. Por ejemplo:
 Tamaño máximo: 10 cm x 10 cm
 Peso máximo: 150 gramos.
-### *Micro-Mouse Classic:
+###### **Micro-Mouse Classic:
 La categoría estándar para Micro mouse, con restricciones de tamaño y peso, pero más flexibilidad que la categoría Mini. Ejemplo:
 Tamaño máximo: 18 cm x 18 cm
 Peso máximo: 500 gramos
-### *Micro-Mouse Mega:
+###### **Micro-Mouse Mega:
 Puede permitir robots más grandes y complejos. Ejemplo:
 Tamaño máximo: 25 cm x 25 cm
 Peso máximo: 1 kilogramo.
@@ -36,10 +36,10 @@ Los componentes para el desarrollo de Taurus fueron:
 
 # Diseño
 ## Diseño electrico
-![Esquema de conexión] (https://github.com/Rvjacome/Taurus/blob/main/Imagenes/Schematic.jpeg "Esquema Electrico")
+[![esquematico] (https://github.com/Rvjacome/Taurus/blob/main/Imagenes/Schematic.jpeg)](https://github.com/Rvjacome/Taurus/blob/main/Imagenes/Schematic.jpeg)
 
 ## PCB
-![PCB frontal] (https://github.com/Rvjacome/Taurus/blob/main/Imagenes/WhatsApp%20Image%202024-01-19%20at%202.03.08%20PM.jpeg) "PCB")
+[![PCB frontal] (https://github.com/Rvjacome/Taurus/blob/main/Imagenes/WhatsApp%20Image%202024-01-19%20at%202.03.08%20PM.jpeg)] (https://github.com/Rvjacome/Taurus/blob/main/Imagenes/WhatsApp%20Image%202024-01-19%20at%202.03.08%20PM.jpeg)
 ![PCB lateral] (https://github.com/Rvjacome/Taurus/blob/main/Imagenes/WhatsApp%20Image%202024-01-19%20at%202.04.16%20PM.jpeg)
 
 ## Diseño mecanico
