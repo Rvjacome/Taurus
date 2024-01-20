@@ -36,22 +36,12 @@ Los componentes para el desarrollo de Taurus fueron:
 
 # Diseño
 ## Diseño electrico
-[![esquematico] (https://github.com/Rvjacome/Taurus/blob/main/Imagenes/Schematic.jpeg)](https://github.com/Rvjacome/Taurus/blob/main/Imagenes/Schematic.jpeg)
-
-## PCB
-[![PCB frontal] (https://github.com/Rvjacome/Taurus/blob/main/Imagenes/WhatsApp%20Image%202024-01-19%20at%202.03.08%20PM.jpeg)] (https://github.com/Rvjacome/Taurus/blob/main/Imagenes/WhatsApp%20Image%202024-01-19%20at%202.03.08%20PM.jpeg)
-![PCB lateral] (https://github.com/Rvjacome/Taurus/blob/main/Imagenes/WhatsApp%20Image%202024-01-19%20at%202.04.16%20PM.jpeg)
+Diseño de conecciones electricas del Robot usando kicad
+![Diseño electrico](https://github.com/Rvjacome/Taurus/blob/main/Imagenes/Schematic.jpeg)
 
 ## Diseño mecanico
 
-![ensamblado] (https://github.com/Rvjacome/Taurus/blob/main/Imagenes/Robot.jpeg) "Esquema Electrico")
-
-
-### Giros:
-
-
-
-### Condiciones iniciales:
+![ensamblado](https://github.com/Rvjacome/Taurus/blob/main/Imagenes/Robot.jpeg)
 
 
 
