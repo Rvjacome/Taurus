@@ -14,7 +14,6 @@ def generate_launch_description():
     taurus_description_dir = get_package_share_directory("taurus_description")
     taurus_description_share = os.path.join(get_package_prefix("taurus_description"), "share")
     gazebo_ros_dir = get_package_share_directory("gazebo_ros")
-    use_sim_time = LaunchConfiguration('use_sim_time')
 
     # Argumento de lanzamiento para especificar la ubicación del archivo URDF del robot
     model_arg = DeclareLaunchArgument(

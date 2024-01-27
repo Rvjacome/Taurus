@@ -1,13 +1,47 @@
 <?xml version="1.0"?>
 
 <robot name="taurus" xmlns:xacro="http://ros.org/wiki/xacro">
- 
-  <!--link name="odom_frame"/>
-  <joint name="odom_joint" type="fixed">
-    <parent link="odom_frame" />
-    <child link = "base_link" />
-    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
-  </joint--> 
+  
+  <!-- Init colour -->
+  <material name="black">
+      <color rgba="0.0 0.0 0.0 1.0"/>
+  </material>
+
+  <material name="dark">
+    <color rgba="0.3 0.3 0.3 1.0"/>
+  </material>
+
+  <material name="light_black">
+    <color rgba="0.4 0.4 0.4 1.0"/>
+  </material>
+
+  <material name="blue">
+    <color rgba="0.0 0.0 0.8 1.0"/>
+  </material>
+
+  <material name="green">
+    <color rgba="0.0 0.8 0.0 1.0"/>
+  </material>
+
+  <material name="grey">
+    <color rgba="0.5 0.5 0.5 1.0"/>
+  </material>
+
+  <material name="orange">
+    <color rgba="1.0 0.4235 0.0392 1.0"/>
+  </material>
+
+  <material name="brown">
+    <color rgba="0.8706 0.8118 0.7647 1.0"/>
+  </material>
+
+  <material name="red">
+    <color rgba="0.8 0.0 0.0 1.0"/>
+  </material>
+
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
   
   <link
     name="base_link">
@@ -36,7 +70,7 @@
       <material
         name="">
         <color
-          rgba="0.745098039215686 0.737254901960784 0.729411764705882 1" />
+          rgba="0.6 0.6 0.8 0.94" />
       </material>
     </visual>
     <collision>
@@ -64,6 +98,7 @@
     <mu2>200</mu2>
     <kp>1000000</kp>
     <kd>1</kd>
+    <material>Gazebo/SkyBlue</material>
   </gazebo>
   
   
@@ -92,9 +127,9 @@
           filename="package://taurus_description/meshes/rueda_derecha_link.STL" />
       </geometry>
       <material
-        name="">
+         name="">
         <color
-          rgba="0.29804 0.29804 0.29804 1" />
+          rgba="0.2 0.2 0.2 0.96" />
       </material>
     </visual>
     <collision>
@@ -125,6 +160,7 @@
     <mu2>200</mu2>
     <kp>1000000</kp>
     <kd>1</kd>
+    <material>Gazebo/Black</material>
   </gazebo>
   
   <link
@@ -152,9 +188,9 @@
           filename="package://taurus_description/meshes/rueda_izquierda_link.STL" />
       </geometry>
       <material
-        name="">
+         name="">
         <color
-          rgba="0.29804 0.29804 0.29804 1" />
+          rgba="0 0 0 1" />
       </material>
     </visual>
     <collision>
@@ -185,6 +221,7 @@
     <mu2>200</mu2>
     <kp>1000000</kp>
     <kd>1</kd>
+    <material>Gazebo/Black</material>
   </gazebo>
   
   
@@ -418,7 +455,7 @@
       </ray>
       <plugin name="scan" filename="libgazebo_ros_ray_sensor.so">
         <ros>
-          <remapping>~/out:=laser_scan</remapping>
+          <remapping>~/out:=scan</remapping>
         </ros>
         <output_type>sensor_msgs/LaserScan</output_type>
         <frame_name>scan_link</frame_name>
@@ -484,29 +521,20 @@
  
       <!-- When true, publish coordinate transform from odom to base_footprint -->
       <!-- I usually use the robot_localization package to publish this transform -->  
-      <publish_odom_tf>false</publish_odom_tf>
+      <publish_odom_tf>true</publish_odom_tf>
      
       <!-- When true, publish coordinate transform from base_link to the wheels -->
       <!-- The robot_state_publisher package is often used to publish this transform -->  
       <publish_wheel_tf>true</publish_wheel_tf>
  
       <odometry_topic>odom</odometry_topic>
-      <odometry_frame>odom_link</odometry_frame>
+      <odometry_frame>odom</odometry_frame>
       <robot_base_frame>base_footprint</robot_base_frame>
  
       <odometry_source>1</odometry_source>
       <ros>
         <remapping>odom:=wheel/odometry</remapping>
       </ros>
-    </plugin>
-  </gazebo>
-
-  <gazebo>
-    <plugin name="gazebo_ros_joint_state_publisher"
-        filename="libgazebo_ros_joint_state_publisher.so">
-        <update_rate>100</update_rate>
-        <joint_name>Base_castor_joint</joint_name>
-        <joint_name>rueda_castor_joint</joint_name>
     </plugin>
   </gazebo>
 
