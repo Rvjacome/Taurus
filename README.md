@@ -83,11 +83,19 @@ If some warnings appear, run `colcon build --packages-select basic_diffbot --sym
 #  Diseño
 ## :electron: Diseño electrico
 El diseño de conecciones electricas del Robot.
+
+<div align="center">
 ![Diseño electrico](https://github.com/Rvjacome/Taurus/blob/main/Imagenes/Schematic.jpeg)
+</div>
+
 
 ## :mechanical_arm: Diseño mecanico
 El diseño mecanico del robot se puede obtener en :(Link de Grabcad) en formato .STEP
-![ensamblado](https://github.com/Rvjacome/Taurus/blob/main/Imagenes/Robot.jpeg)
+
+<div align="center">
+
+  ![ensamblado](https://github.com/Rvjacome/Taurus/blob/main/Imagenes/Robot.jpeg)
+</div>
 
 ## :rocket:Programa:
 Colocar dependencias y paquetes usados en para simulacion , nav2
@@ -96,14 +104,14 @@ Colocar dependencias y paquetes usados en para simulacion , nav2
 ## :computer: Simulation
 
 <div align="center">
-
-![gazebo](https://github.com/Rvjacome/Taurus/blob/main/Imagenes/gazebo.jpeg)
+  
+  ![gazebo](https://github.com/Rvjacome/Taurus/blob/main/Imagenes/gazebo.jpeg)
 </div>
 
 
 <div align="center">
 
-![nav2](https://github.com/Rvjacome/Taurus/blob/main/Imagenes/navegation.jpeg)
+  ![nav2](https://github.com/Rvjacome/Taurus/blob/main/Imagenes/navegation.jpeg)
 </div>
 
 
