@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->    
+<!--robot
+  name="Taurus"-->
+
+<robot name="taurus" xmlns:xacro="http://ros.org/wiki/xacro">
+ 
+  <!--link name="odom_frame"/>
+  <joint name="odom_joint" type="fixed">
+    <parent link="odom_frame" />
+    <child link = "base_link" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+  </joint--> 
+  
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.000110504329843525 -0.000171267807196562 0.0164534041997902"
+        rpy="0 0 0" />
+      <mass
+        value="0.109923704165007" />
+      <inertia
+        ixx="0.0001"
+        ixy="0"
+        ixz="0"
+        iyy="0.0003"
+        iyz="0"
+        izz="0.0002" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taurus_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.6 0.6 0.8 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taurus_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  
+  <link name="base_footprint"/>
+  
+  <joint name="ground_joint" type="fixed">
+    <parent link="base_footprint" />
+    <child link = "base_link" />
+    <origin xyz="0 0 0.005" rpy="0 0 0"/>
+  </joint>
+  
+  <gazebo reference="base_link">
+    <mu1>200</mu1>
+    <mu2>200</mu2>
+    <kp>1000000</kp>
+    <kd>1</kd>
+  </gazebo>
+  
+  
+  <link
+    name="rueda_derecha_link">
+    <inertial>
+      <origin
+        xyz="1.72126556004931E-07 0.000106599449104558 -0.00113412741582314"
+        rpy="0 0 0" />
+      <mass
+        value="0.08" />
+      <inertia
+        ixx="0.000002"
+        ixy="0"
+        ixz="0"
+        iyy="0.000002"
+        iyz="0"
+        izz="0.00001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taurus_description/meshes/rueda_derecha_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.2 0.2 0.96" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.015" length="0.016"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rueda_derecha_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0043022 -0.049462 0.0080355"
+      rpy="-1.5723 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rueda_derecha_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  
+    <gazebo reference="rueda_derecha_link">
+    <mu1>200</mu1>
+    <mu2>200</mu2>
+    <kp>1000000</kp>
+    <kd>1</kd>
+  </gazebo>
+  
+  <link
+    name="rueda_izquierda_link">
+    <inertial>
+      <origin
+        xyz="0.000104707279388615 -1.72015628169264E-06 0.00113430238217332"
+        rpy="0 0 0" />
+      <mass
+        value="0.08" />
+      <inertia
+        ixx="0.000002"
+        ixy="0"
+        ixz="0"
+        iyy="0.000002"
+        iyz="0"
+        izz="0.00001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taurus_description/meshes/rueda_izquierda_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.2 0.2 0.96" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.015" length="0.016"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rueda_izquierda_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0043314 0.04838 0.0080163"
+      rpy="-1.5723 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rueda_izquierda_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  
+   <gazebo reference="rueda_izquierda_link">
+    <mu1>200</mu1>
+    <mu2>200</mu2>
+    <kp>1000000</kp>
+    <kd>1</kd>
+  </gazebo>
+
+  <link
+    name="base_castor_link">
+    <inertial>
+      <origin
+        xyz="2.36675372452672E-05 0.000188155199999596 -0.000655761496261356"
+        rpy="0 0 0" />
+      <mass
+        value="0.00033463" />
+      <inertia
+        ixx="0.00004"
+        ixy="0"
+        ixz="0"
+        iyy="0.00004"
+        iyz="0"
+        izz="0.00001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taurus_description/meshes/base_castor_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taurus_description/meshes/base_castor_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_castor_joint"
+    type="fixed">
+    <origin
+      xyz="0.05652 5.8287E-05 0.0034304"
+      rpy="-0.0014807 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="base_castor_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  
+    <gazebo reference="base_castor_link">
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>1000000</kp>
+    <kd>1</kd>
+  </gazebo>
+  
+  
+  <link
+    name="ball_link">
+    <inertial>
+      <origin
+        xyz="0 0 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.06" />
+      <inertia
+        ixx="0.00004"
+        ixy="0"
+        ixz="0"
+        iyy="0.00004"
+        iyz="0"
+        izz="0.000001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taurus_description/meshes/ball_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.005"/>
+      </geometry>
+    </collision>
+  </link>
+  
+
+  <joint
+    name="ball_joint"
+    type="revolute">
+    <origin
+      xyz="-1.2745E-05 5.0515E-05 -0.0041208"
+      rpy="-1.5708 0.022593 0" />
+    <parent
+      link="base_castor_link" />
+    <child
+      link="ball_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  
+  <gazebo reference="ball_link">
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>1000000</kp>
+    <kd>1</kd>
+  </gazebo> 
+
+  
+  
+  <link
+    name="front_link">
+    <inertial>
+      <origin
+        xyz="-0.00701507305162563 -0.0170033582422705 -0.000892738968458873"
+        rpy="0 0 0" />
+      <mass
+        value="0.0055715" />
+      <inertia
+        ixx="5.6499E-07"
+        ixy="3.6334E-08"
+        ixz="3.4462E-09"
+        iyy="2.3592E-07"
+        iyz="-1.4863E-09"
+        izz="6.4738E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taurus_description/meshes/front_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0980392156862745 0.0980392156862745 0.0980392156862745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taurus_description/meshes/front_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_joint"
+    type="fixed">
+    <origin
+      xyz="0.056507 0.0001027 -0.00069056"
+      rpy="-1.5723 0.022593 -3.3458E-05" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <link
+    name="der_link">
+    <inertial>
+      <origin
+        xyz="-0.0222400014983548 -0.0156710385548851 -0.0356208355625536"
+        rpy="0 0 0" />
+      <mass
+        value="0.00447834048846324" />
+      <inertia
+        ixx="9.32597625482861E-08"
+        ixy="6.21089996882111E-09"
+        ixz="4.80770767750181E-09"
+        iyy="3.8251622391626E-07"
+        iyz="-7.82785766002733E-11"
+        izz="3.81164762413597E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taurus_description/meshes/der_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0980392156862745 0.0980392156862745 0.0980392156862745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taurus_description/meshes/der_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="der_joint"
+    type="fixed">
+    <origin
+      xyz="0.056507 0.0001027 -0.00069056"
+      rpy="-1.5723 0.022593 -3.3458E-05" />
+    <parent
+      link="base_link" />
+    <child
+      link="der_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="izq_link">
+    <inertial>
+      <origin
+        xyz="-0.0223136313523252 0.0354310139639194 0.0121590650094822"
+        rpy="0 0 0" />
+      <mass
+        value="0.00447834047903675" />
+      <inertia
+        ixx="9.31273703823107E-08"
+        ixy="4.80794907961316E-09"
+        ixz="5.15742601559754E-10"
+        iyy="3.81164603005841E-07"
+        iyz="1.09454363636539E-11"
+        izz="3.82648773188072E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taurus_description/meshes/izq_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0980392156862745 0.0980392156862745 0.0980392156862745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://taurus_description/meshes/izq_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="izq_joint"
+    type="fixed">
+    <origin
+      xyz="0.05652 5.8287E-05 0.0034304"
+      rpy="-0.0014807 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="izq_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  
+  <link name="imu_link"/>
+  <joint
+    name="imu_joint"
+    type="fixed">
+    <origin
+      xyz="0.0 0 0.0"
+      rpy="0 -0.07 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="imu_link" />
+  </joint>  
+  
+
+
+
+  
+  <!--LIDAR CONFIGURATION-->
+
+  <gazebo reference="der_link">
+    <sensor name="lidar" type="ray">
+    
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>10</samples>
+            <resolution>1</resolution>
+            <min_angle>-0.57079</min_angle>
+            <max_angle>0.57079</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.05</min>
+          <max>1.0</max>
+          <resolution>0.2</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="scan" filename="libgazebo_ros_ray_sensor.so">
+        <ros>
+          <remapping>~/out:=scan</remapping>
+        </ros>
+        <output_type>sensor_msgs/LaserScan</output_type>
+        <frame_name>der_link</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="der_link">
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>100000</kp>
+    <kd>1</kd>
+    <material>Gazebo/Black</material>
+  </gazebo>
+  
+  
+  <!--IMU sensor-->
+
+  <gazebo reference="imu_link">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <topic>imu_data</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>imu_data</topicName>
+        <bodyName>imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.03</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>imu_link</frameName>
+        <initialOrientationAsReference>true</initialOrientationAsReference>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  
+
+<gazebo>
+    <plugin name="two_wheeled_robot_diff_drive" filename="libgazebo_ros_diff_drive.so">
+ 
+      <update_rate>100</update_rate>
+      
+      <!-- wheels -->
+      <left_joint>rueda_izquierda_joint</left_joint>
+      <right_joint>rueda_derecha_joint</right_joint>
+ 
+      <!-- kinematics -->
+      <wheel_separation>0.07</wheel_separation>
+      <wheel_diameter>0.030</wheel_diameter>
+ 
+      <!-- limits -->
+      <max_wheel_torque>20</max_wheel_torque>
+      <max_wheel_acceleration>20.0</max_wheel_acceleration>
+ 
+      <!-- Receive velocity commands on this ROS topic -->
+      <command_topic>cmd_vel</command_topic>
+ 
+      <!-- output -->
+      <!-- When false, publish no wheel odometry data to a ROS topic -->
+      <publish_odom>true</publish_odom>
+ 
+      <!-- When true, publish coordinate transform from odom to base_footprint -->
+      <!-- I usually use the robot_localization package to publish this transform -->  
+      <publish_odom_tf>false</publish_odom_tf>
+     
+      <!-- When true, publish coordinate transform from base_link to the wheels -->
+      <!-- The robot_state_publisher package is often used to publish this transform -->  
+      <publish_wheel_tf>true</publish_wheel_tf>
+ 
+      <odometry_topic>odom</odometry_topic>
+      <odometry_frame>odom_link</odometry_frame>
+      <robot_base_frame>base_footprint</robot_base_frame>
+ 
+      <odometry_source>1</odometry_source>
+      <ros>
+        <remapping>odom:=wheel/odometry</remapping>
+      </ros>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="gazebo_ros_joint_state_publisher"
+        filename="libgazebo_ros_joint_state_publisher.so">
+        <update_rate>100</update_rate>
+        <joint_name>ball_joint</joint_name>
+    </plugin>
+  </gazebo>
+
+  
+</robot>
