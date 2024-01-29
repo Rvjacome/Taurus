@@ -1,7 +1,17 @@
-# Taurus
-MazeSolverRobot
---ROS version : ROS2 HUMBLE--
-## Information source
+<div align="center">
+
+  # Taurus
+</div>
+
+## :books: Package Summary
+
+- :rocket: [`andino_bringup`](./andino_bringup): Contains mainly launch files in order to launch all related driver and nodes to be used in the real robot.
+- :robot: [`andino_hardware`](./andino_hardware): Contains information about the Andino assembly and hardware parts.
+- :ledger: [`andino_description`](./andino_description): Contains the URDF description of the robot.
+- :hammer_and_pick: [`andino_firmware`](./andino_firmware): Contains the code be run in the microcontroller for interfacing low level hardware with the SBC.
+- :gear: [`andino_base`](./andino_base): [ROS Control hardware interface]
+
+## :paperclips: Information source
 - ROS Documentation: https://docs.ros.org/en/humble/index.html
 
 ## Installing and cloning ROS 2 packages
@@ -67,82 +77,33 @@ colcon build --packages-select basic_diffbot --symlink-install
 source install/setup.bash
 ```
 
-**NOTE:** This builds the package and sets a symbolic link to the python files (nodes and launch files). With this, re-build every time that a python file is modified, is not required.<br>
+**:NOTE:** This builds the package and sets a symbolic link to the python files (nodes and launch files). With this, re-build every time that a python file is modified, is not required.<br>
 In ROS 2, launch files may be written in yaml, xml or python languages, but it is extremely recommended to use python. Also, the name of all launch files must finish with 'launch.py'. Otherwise, the file will not be recognized.<br>
 If some warnings appear, run `colcon build --packages-select basic_diffbot --symlink-install` again and they will disappear.
 
-# **Diseño del Robot**
-Este proyecto se constan en la realizacion desde su conceptualizacion hasta la implementacion de un robot Resuelve laberinto para competencia.
-Existen varias categorias de Robot Laberinto o Maze Solver Robot ,entre estas estan:
-####  Micro-Mouse Mini:
-Puede tener restricciones más estrictas en cuanto a tamaño y peso. Por ejemplo:
-Tamaño máximo: 10 cm x 10 cm
-Peso máximo: 150 gramos.
-####  Micro-Mouse Classic:
-La categoría estándar para Micro mouse, con restricciones de tamaño y peso, pero más flexibilidad que la categoría Mini. Ejemplo:
-Tamaño máximo: 18 cm x 18 cm
-Peso máximo: 500 gramos
-####  Micro-Mouse Mega:
-Puede permitir robots más grandes y complejos. Ejemplo:
-Tamaño máximo: 25 cm x 25 cm
-Peso máximo: 1 kilogramo.
 
-Las restricciones cambian un poco dependiendo por ejemplo del Pais donde se realiza la competencia .restricciones en cuanto a tamaño para el diseño de Taurus se tomaron de la pasada competencia Robot & Science 2023 de la categoria de Robot Laberinto Classic en las que las dimensiones maximas del robot no debe superar los 15x15x15 cm sin restriccion de peso y se prohibe expandir sus dimensiones durante la competencia y ademas el robot debe ser completamente autonomo prohibiendose el uso de sistemas de comunicacion externo.
-Los componentes para el desarrollo de Taurus fueron:
-### Materiales:
-* Caster ball Pololu Zumo 
-* Raspberry pi pico ( W si se desea usar el un control inalambrico)
-* Bateria de 3.7V
-* Bateria 7.5V
-* modelo TB6612FNG driver motor
-* 2 GP2Y0A41SK0F sensor - alcance 4-30 cm
-* Zumo Reflectance Sensor Array (QTR)
-* N20 DC Motor with Magnetic Encoder - 6V
-* Piezas impresas 3D PLA
-* Tornillos de 3 mm de diámetro para sujeción
-* Cables para conexionado, (recomendado CI perforado universal para soldar cables) o se puede usar la PCB diseñada en este proyecto
-* SD card adapter
-
-# Diseño
-## Diseño electrico
+#  Diseño
+## :electron: Diseño electrico
 El diseño de conecciones electricas del Robot.
 ![Diseño electrico](https://github.com/Rvjacome/Taurus/blob/main/Imagenes/Schematic.jpeg)
 
-## Diseño mecanico
+## :mechanical_arm: Diseño mecanico
 El diseño mecanico del robot se puede obtener en :(Link de Grabcad) en formato .STEP
 ![ensamblado](https://github.com/Rvjacome/Taurus/blob/main/Imagenes/Robot.jpeg)
 
-### Programa:
+## :rocket:Programa:
 Colocar dependencias y paquetes usados en para simulacion , nav2
-### Desplazamientos y giros:
-Taurus es un robot diferencial de lo que 
-
-### Piezas impresas:
 
 
-### Construcción:
-Armado fisico
+## :computer: Simulation
 
+## :compass: Navigation
 
-
-
-
-### Referencias:
+### :star2: Referencias:
 
 * *[Pololu Zumo for Arduino][1]*
 
 
-
-### Autor:
-**Robinson Vinicio Jacome Bejarano**
-
-### Agradecimientos:
-
-
-
 ### Licencia:
 Todos estos productos están liberados mediante licencia Apache 2.0
-
-[1]:https://www.pololu.com/product/2506
-
 
