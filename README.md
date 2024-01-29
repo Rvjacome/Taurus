@@ -94,6 +94,8 @@ Colocar dependencias y paquetes usados en para simulacion , nav2
 
 
 ## :computer: Simulation
+![gazebo](https://github.com/Rvjacome/Taurus/blob/main/Imagenes/gazebo.jpeg)
+![nav2](https://github.com/Rvjacome/Taurus/blob/main/Imagenes/nav2.png)
 
 ## :compass: Navigation
 #### install slam_toolbox
