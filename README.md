@@ -5,11 +5,9 @@
 
 ## :books: Package Summary
 
-- :rocket: [`andino_bringup`](./andino_bringup): Contains mainly launch files in order to launch all related driver and nodes to be used in the real robot.
-- :robot: [`andino_hardware`](./andino_hardware): Contains information about the Andino assembly and hardware parts.
-- :ledger: [`andino_description`](./andino_description): Contains the URDF description of the robot.
-- :hammer_and_pick: [`andino_firmware`](./andino_firmware): Contains the code be run in the microcontroller for interfacing low level hardware with the SBC.
-- :gear: [`andino_base`](./andino_base): [ROS Control hardware interface]
+- :rocket: [`taurus_toolbox](./taurus_toolbox): Provee soporte para Slam con slam_toolbox.
+- :robot: [`taurus_description`](./taurus_description): Contiene la descripcion del URDF del robot.
+- :ledger: [`taurus_nav2`](./taurus_nav2): Stack de navegacion basado en nav2.
 
 ## :paperclips: Information source
 - ROS Documentation: https://docs.ros.org/en/humble/index.html
@@ -98,7 +96,23 @@ Colocar dependencias y paquetes usados en para simulacion , nav2
 ## :computer: Simulation
 
 ## :compass: Navigation
+#### install slam_toolbox
 
+ROSDep will take care of the major things
+
+```
+rosdep install -q -y -r --from-paths src --ignore-src
+```
+
+Or install via apt
+
+```
+apt install ros-eloquent-slam-toolbox
+```
+
+Run your colcon build procedure of choice.
+
+You can run via `ros2 launch slam_toolbox online_sync_launch.py`
 ### :star2: Referencias:
 
 * *[Pololu Zumo for Arduino][1]*
